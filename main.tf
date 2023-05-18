@@ -8,3 +8,7 @@ module "read" {
   source        = "./modules/read"
   input_variable = module.files.file_content_md5
 }
+
+module "write" {
+  source = "./modules/write"
+}
