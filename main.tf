@@ -32,3 +32,22 @@ locals {
 output "all_answers" {
   value = local.answers
 }
+
+//Task 4
+
+module "files" {
+  source      = "./modules/files"
+  file_count  = 1
+  file_names  = ["file1.txt"]
+  file_content  = "This is the content of the file."
+}
+
+module "data" {
+  source      = "./modules/data"
+  file_path   = module.files.created_files[0]
+  depends_on  = [module.files]
+}
+
+output "file_id" {
+  value = module.data.file_id
+}
