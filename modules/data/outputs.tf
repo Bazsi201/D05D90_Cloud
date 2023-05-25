@@ -1,3 +1,3 @@
 output "file_id" {
-  value = data.local_file.file_data.id
+  value = data.local_file.generated_file.id
 }

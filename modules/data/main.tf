@@ -1,7 +1,9 @@
-data "local_file" "file_data" {
-  filename = var.file_path
+locals {
+  generated_file_path = var.generated_file_path
 }
 
-output "file_id" {
-  value = data.local_file.file_data.id
+data "local_file" "generated_file" {
+  filename = local.generated_file_path
 }
+
+
