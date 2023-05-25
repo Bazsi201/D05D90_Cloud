@@ -1,1 +1,3 @@
-answers = ["Init", "Tuple", "While", "Put them in the same module", "Using -var flag"]
+answers = ["Init", "Int", "While", "Using meta-argument", "Using -var flag"]
+
+path = "./modules/files/name_0"

@@ -1,14 +1,17 @@
+//TASK 1
 module "files" {
   source  = "./modules/files"
   content = "test"
   name    = "name"
 }
 
+//TASK 2
 module "read" {
   source        = "./modules/read"
   input_variable = module.files.file_content_md5
 }
 
+//TASK 3
 module "write" {
   source = "./modules/write"
 
@@ -25,4 +28,11 @@ locals {
 
 output "all_answers" {
   value = local.answers
+}
+
+//TASK 4
+module "data" {
+  source = "./modules/data"
+  generated_file_path = var.path
+  depends_on = [ module.read ]
 }
